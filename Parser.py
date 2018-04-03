@@ -36,13 +36,13 @@ def get_info(tag):
     info = []
     info_source = get_html_soup(BASE_URL_INFO+reference+'/')
 
-    SerialText = info_source.find(("div", {"class": "serial-w"}))
+    serial_text = info_source.find(("div", {"class": "serial-w"}))
     info.append({'name': tag.text,
                  'last season': serial_lastseason(tag),
                  'last episod': serial_lastepisod(tag),
                  'photo': info_source.find('img').get('src'),
-                 'text_info': SerialText.find('p').text,
-                 'ratings': [rating.text for rating in SerialText.find_all('div')[1:]]})
+                 'text_info': serial_text.find('p').text,
+                 'ratings': [rating.text for rating in serial_text.find_all('div')[1:]]})
     return info
 
 

@@ -75,11 +75,11 @@ if __name__ == '__main__':
 
     Variable1 = seasonvar.find("div",{"class":"lside-serial"})
     Variable2=Variable1.find_all('a')
-    for i in Variable2[:100]:
+    for i in Variable2[:1]:
         print(get_info(i))
 
 
-    x=0
+
 
     print(delete_studio("02.04.2018 16 серия (NewStudio) из 22"))
 
